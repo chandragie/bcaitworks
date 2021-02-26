@@ -1,16 +1,15 @@
 <template>
   <div id="app" class="flex h-screen w-full justify-center items-center">
     <div
-      class="w-1/2 h-auto rounded-lg bg-gray-50 p-5 flex flex-col items-center"
+      class="w-1/2 h-auto rounded-lg bg-gray-50 p-5 flex flex-col items-center shadow-md"
     >
-      <div class="w-full flex justify-center items-center mb-10">
-        <img
-          id="profile-img"
-          src="https://img.icons8.com/fluent/344/year-of-tiger.png"
-        />
-      </div>
+      <img
+        class="flex justify-center items-center mb-10"
+        id="profile-img"
+        src="https://img.icons8.com/fluent/344/year-of-tiger.png"
+      />
       <div class="w-full mb-5 mx-auto flex flex-col">
-        <form autocomplete="off">
+        <form autocomplete="off" @submit.prevent="">
           <input
             type="text"
             placeholder="Username"
@@ -46,7 +45,7 @@
 <script>
 export default {
   name: "App",
-  data: function () {
+  data() {
     return {};
   },
   components: {},
