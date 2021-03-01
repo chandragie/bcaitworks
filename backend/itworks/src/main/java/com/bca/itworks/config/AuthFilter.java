@@ -23,7 +23,7 @@ public class AuthFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) res;
 
         String auth = request.getHeader("Authorization");
-        if (null != auth || isAllowedAnonymousURL(request)) {
+        if (null != auth || isAllowedAnonymousURL(request) || request.getRequestURI().startsWith("/log/out")) {
             fc.doFilter(request, response);
         } else {
             // response.sendRedirect(request.getContextPath() + "/common/unauthorized");
